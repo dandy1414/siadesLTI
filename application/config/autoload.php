@@ -132,5 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Pendidikan_m','Penduduk_m','Programdesa_m','Potensidesa_m','Pengumuman_m','Registrasi_m','Layanan_m',
-    'Lansia_m','Keluarga_m','Berita_m','Kategori_m','Balita_m','Galeri_m','Lembaga_m','Login_m','Loginadmin_m','Privacy_m','Pengaduan_m','Format_m');
+$autoload['model'] = array('Pendidikan_m','Penduduk_m','Programdesa_m','Potensidesa_m','Pengumuman_m','Registrasi_m','Layanan_m', 'Registrasi_admin_m', 'Lansia_m','Keluarga_m','Berita_m','Kategori_m','Balita_m','Galeri_m','Lembaga_m','Login_m','Loginadmin_m','Privacy_m','Pengaduan_m','Format_m');

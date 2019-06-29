@@ -49,9 +49,13 @@
 								</div>
 
 								<div class="container-login100-form-btn m-t-32">
+								<a href="<?php echo base_url();?>Akunadmin/registrasi" class="login100-form-btn mr-3">Register</a>
 									<button type="submit" class="login100-form-btn">
 										Login
 									</button>
+								</div>
+								<div class="container-login100-form-btn m-t-32">
+									<p class="card-text"><small class="text-muted">Belum mempunyai akun?</small></p>
 								</div>
 							</form>
 						</div>

@@ -83,7 +83,7 @@
 <!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/login/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src=<?php echo base_url();?>assets/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?php echo base_url();?>assets/login/vendor/daterangepicker/moment.min.js"></script>
 	<script src="<?php echo base_url();?>assets/login/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/login/vendor/countdowntime/countdowntime.js"></script>
