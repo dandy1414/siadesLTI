@@ -12,7 +12,7 @@
                       <a href="<?php Echo site_url('Berita/index')?>">
                         <span class="fa-home fa"></span>Berita</a>
                     </li>
-<!--                    <li class="active ripple">
+                    <!--<li class="active ripple">
                       <a href="<?php Echo site_url('Kategori/index')?>">
                         <span class="fa-home fa"></span>Kategori</a>
                     </li>-->
@@ -51,11 +51,8 @@
                       <a href="<?php Echo site_url('Lembaga/index')?>">
                         <span class="fa-home fa"></span>Lembaga</a>
                     </li>
-                    
-                    
                       </ul>
                     </li>
-                    <li><a href="credits.html">#</a></li>
                   </ul>
                 </div>
             </div>
