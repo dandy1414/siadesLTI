@@ -39,4 +39,9 @@ class Berita_m extends CI_Model{
         $this->db->or_like('isi', $keyword);
         return $this->db->get('berita')->result();
     }
+
+    function tampilBeritaAgama($id)
+    {
+        $query = $this->db->query("SELECT * FROM berita WHERE kategori='Agama' AND WHERE id='$id'");
+    }
 }

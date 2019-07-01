@@ -10,6 +10,7 @@ class BeritaF extends CI_Controller{
     {
         $data['judul'] = 'Halaman Layanan';
         $data['berita'] = $this->Berita_m->select_db();
+        // $data['kategori'] = $this->Berita_m->tampilBeritaAgama($id);
         $keyword = $this->input->post('keyword');
         if (!empty($keyword)){
             $data['berita'] = $this->Berita_m->cariDataBerita($keyword);

@@ -4,7 +4,7 @@ class Kategori_m extends CI_Model{
 		$this->db->insert('kategori',$data);
 	}
         function select_db(){
-            return $this->db->query("Select * FROM kategori")->result();
+            return $this->db->query("SELECT * FROM kategori")->result();
         }
        function delete_db($id){
             $this->db->where('id_kategori',$id);

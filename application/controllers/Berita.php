@@ -87,6 +87,4 @@ class Berita extends CI_Controller {
         $this->Berita_m->edit_db($id_berita, $data);
         redirect('Berita');
     }
-     
-
 }
