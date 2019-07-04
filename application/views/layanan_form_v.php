@@ -9,8 +9,7 @@ v class="panel-body"></div>
     <div class="col-md-12">
       <div class="panel">
         <div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Layanan'); ?>">Data Layanan</a></div>
-        <div class="panel-body"></div>
-        <div class="container">
+        <div class="panel-body">
            
              <form method="post" action="<?php echo site_url('Layanan/insert');?>"
                   enctype="multipart/form-data">

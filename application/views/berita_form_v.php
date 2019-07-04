@@ -7,7 +7,7 @@
 			<div class="panel">
 				<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Berita'); ?>">Data Berita</a>
 				</div>
-				<div class="panel-body"></div>
+				<div class="panel-body">
 				
 
 					<form method="post" action="<?php echo site_url('Berita/insert');?>" enctype="multipart/form-data">

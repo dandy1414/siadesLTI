@@ -16,13 +16,13 @@
 		</div>
 
 		<?php  if (empty($berita)) { ?>
-		<div class="alert alert-danger" role="alert">Maaf, berita yang anda cari tidak ditemukan
+		<div class="alert alert-danger pt-5" role="alert">Maaf, berita yang anda cari tidak ditemukan
 		</div>
 		<?php } ?>
 		
 
 		
-		<div class="container">
+		<div class="container pt-5">
 		<?php
 		$kategori =$this->Kategori_m->select_db();
 		$no = 1;
@@ -37,21 +37,36 @@
 						</button>
 					</h2>
 				</div>
-		
+
+				<?php 
+				$no = 1;
+				$berita = $this->Berita_m->tampilBeritaAgama();
+				foreach($berita as $row) : ?>
 				<div id="collapseasu" class="collapse" aria-labelledby="headingOne"
 					data-parent="#accordionasu">
 					<div class="card-body">
-						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-						3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-						laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-						coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-						anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-						occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-						of them accusamus labore sustainable VHS.
+						<?= $row->judul; ?>
 					</div>
 				</div>
+		<?php endforeach; ?>
 			</div>
 		</div>
 		<?php endforeach; ?>
+
+		<!-- <?php
+      	foreach ($berita as $row) : ?>
+		<div class="card mt-5">
+			<img src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>" class="card-img-top" alt="...">
+			<div class="card-body">
+				<a href="<?php echo site_url('Beritaf/detailBerita/' . $row->id_berita); ?>">
+					<h5 class="card-title"><?= $row->judul; ?>
+				</a></h5>
+				<p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+					<?= $row->isi; ?>
+				</p>
+				<p class="card-text"><small class="text-muted"><?= $row->tanggal; ?> WIB</small></p>
+			</div>
+		</div>
+		<?php endforeach; ?> -->
 	</div>
 </section>

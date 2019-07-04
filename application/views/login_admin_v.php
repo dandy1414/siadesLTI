@@ -31,8 +31,8 @@
 	<div class="limiter">
 			<div class="container-login100" style="background-image: url('<?php echo base_url();?>login/images/bg-01.jpg');">
 				<div class="container">
-					<a href="<?php echo base_url();?>home" class="btn btn-info" style="width:100%; margin-bottom:20px;">Back to Home</a>
-					<div class="mt-3 mb-3" style="margin:0px;display:flex;justify-content:center;width:100%">
+					<!-- <a href="<?php echo base_url();?>home" class="btn btn-info" style="width:100%; margin-bottom:20px;">Back to Home</a> -->
+					<div class="mt-3 mb-5" style="margin:0px;display:flex;justify-content:center;width:100%">
 						<h2 style="color:white">Account Lauwbas Login </h2>
 					</div>
 					<div style="width:100%;display:flex;justify-content:center;">
@@ -49,7 +49,7 @@
 								</div>
 
 								<div class="container-login100-form-btn m-t-32">
-								<a href="<?php echo base_url();?>Akunadmin/registrasi" class="login100-form-btn mr-3">Register</a>
+								<a href="<?php echo base_url();?>home" class="login100-form-btn mr-3">Home</a>
 									<button type="submit" class="login100-form-btn">
 										Login
 									</button>

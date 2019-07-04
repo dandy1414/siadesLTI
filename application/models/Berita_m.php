@@ -42,6 +42,6 @@ class Berita_m extends CI_Model{
 
     function tampilBeritaAgama($id)
     {
-        $query = $this->db->query("SELECT * FROM berita WHERE kategori='Agama' AND WHERE id='$id'");
+        $query = $this->db->query("SELECT * FROM berita WHERE kategori='Agama' AND id='$id'");
     }
 }

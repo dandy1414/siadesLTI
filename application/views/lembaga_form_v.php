@@ -6,8 +6,7 @@
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Lembaga'); ?>">Data Lembaga</a></div>
-                <div class="panel-body"></div>
-                <div class="container">
+                <div class="panel-body">
 
 
 

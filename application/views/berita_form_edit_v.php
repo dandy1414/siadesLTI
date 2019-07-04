@@ -7,8 +7,7 @@
 			<div class="panel">
 				<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Berita'); ?>">Data Pendidikan</a></div>
 				<div class="panel-body">
-					<!-- <div class="container">
-						<div class="container"> -->
+					
 							<?php
             foreach ($berita as $row) { ?>
 							<form method="post" action="<?php echo site_url('Berita/edit'); ?>"
