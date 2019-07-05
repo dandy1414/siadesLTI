@@ -1,6 +1,7 @@
-<section>
+
+
+<!-- <section>
 	<div class="container">
-		<!-- Carousel -->
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -47,4 +48,4 @@
   <div class="container">
     <p><?= $row->keterangan; ?></p>
   </div>
-</section>
+</section> -->

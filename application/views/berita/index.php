@@ -38,9 +38,9 @@
 					<div id="<?= $row->kategori;?>" class="collapse <?php ($key == 0) ? "show" : null ?>"
 						aria-labelledby="headingOne" data-parent="#accordionExample">
 						<div class="card-body">
-							
+
 							<?php
-						$berita = $this->Berita_m->select_berita_where($row->kategori);
+							$berita = $this->Berita_m->select_berita_where($row->kategori);
       						foreach ($berita as $row) : ?>
 							<div class="card mt-5">
 								<img src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>"
@@ -59,9 +59,9 @@
 							<?php endforeach; ?>
 						</div>
 					</div>
+				</div>
+				<?php endforeach; ?>
 			</div>
-			<?php endforeach; ?>
 		</div>
-	</div>
 	</div>
 </section>
