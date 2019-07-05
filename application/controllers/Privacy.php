@@ -5,14 +5,10 @@
 class Privacy extends CI_Controller
 {
     public function __construct() {
-
         parent::__construct();
-    if($this->session->has_userdata('username'))
-    {
-    
-    }
-    else
-        redirect ('Akunadmin/login');
+        if($this->session->userdata('status') != "login"){
+            redirect('Akunadmin/login');
+        }
     }
 	
 	function form() {    

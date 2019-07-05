@@ -48,7 +48,7 @@
                   <li class="dropdown avatar-dropdown">
                    <img src="<?php echo base_url();?>asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
-                     <li><a href="<?php echo site_url('Logout')?>"><span class="fa fa-power-off "></span> Sing Out</a></li>
+                     <li><a href="<?php echo site_url('Logout')?>"><span class="fa fa-power-off "></span> Sign Out</a></li>
                   </ul>
                 </li>
                 <li ><a href="#" class="opener-right-menu"></span></a></li>

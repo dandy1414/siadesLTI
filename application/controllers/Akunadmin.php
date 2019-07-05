@@ -25,23 +25,26 @@ class Akunadmin extends CI_Controller {
         $this->load->view('login_admin_v');
     }
 
-    function proses_login() {
-        $username = $this->input->post('in_username');
-        $pass = $this->input->post('in_password');
-        $kondisi = array(
-            'username' => $username,
-            'password' => $pass
-        );
-        $result = $this->Loginadmin_m->login($username, $pass);
-        print_r($result);
-        if (sizeof($result) > 0) {
-            $data = array('username' => $username);
-            $this->session->set_userdata($data);
+    function proses_login(){
+		$username = $this->input->post('in_username');
+		$password = $this->input->post('in_password');
+		$where = array(
+			'username' => $username,
+			'password' => $password
+			);
+		$cek = $this->Loginadmin_m->cek_login("admin",$where)->num_rows();
+		if($cek > 0){
+			$data_session = array(
+				'nama' => $username,
+				'status' => "login"
+				);
+
+            $this->session->set_userdata($data_session);
             redirect('Pendidikan');
-        } else {
-//            echo 'login gagal!!';
+		}else{
             redirect('Akunadmin/login');
-        }
+		}
     }
+    
 
 }

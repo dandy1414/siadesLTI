@@ -4,9 +4,9 @@ class Pendidikan extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        if (!$this->session->has_userdata('username')) {
+        if($this->session->userdata('status') != "login"){
             redirect('Akunadmin/login');
-        }
+		}
     }
 
     function form() {
@@ -22,7 +22,9 @@ class Pendidikan extends CI_Controller {
     }
 
     function index() {
-        $this->load->view('pendidikan_v');
+        
+                $this->load->view('pendidikan_v');
+
     }
 
     function delete($id) {

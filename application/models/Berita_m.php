@@ -27,8 +27,8 @@ class Berita_m extends CI_Model{
         $query = $this->db->query("SELECT * FROM berita order by tanggal DESC limit 10");
         return $query->result();
     }
-        function select_berita_where($id) {
-        $query = $this->db->query("SELECT * FROM berita WHERE id_berita='$id'");
+        function select_berita_where($kategori) {
+        $query = $this->db->query("SELECT * FROM berita WHERE kategori='$kategori'");
         return $query->result();
     }
 
@@ -40,8 +40,4 @@ class Berita_m extends CI_Model{
         return $this->db->get('berita')->result();
     }
 
-    function tampilBeritaAgama($id)
-    {
-        $query = $this->db->query("SELECT * FROM berita WHERE kategori='Agama' AND id='$id'");
-    }
 }

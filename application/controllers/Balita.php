@@ -4,9 +4,10 @@ class Balita extends CI_Controller{
     
     public function __construct() {
         parent::__construct();
-        if (!$this->session->has_userdata('username')) {
+
+        if($this->session->userdata('status') != "login"){
             redirect('Akunadmin/login');
-        }
+		}
     }
     function form(){
         $this->load->view('balita_form_v');
