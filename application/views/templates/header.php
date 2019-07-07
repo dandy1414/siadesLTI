@@ -48,6 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class="mr-lg-4 mr-2 active"><a href="<?= base_url(); ?>">Home</a></li>
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>profil" >Profil Desa</a></li>
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>pengaduanf">Pengaduan</a></li>
+				<li class="mr-lg-4 mr-2"><a href="#">Download App</a></li>
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>pendidikan">Login</a></li>
 			</ul>
 		</nav>
