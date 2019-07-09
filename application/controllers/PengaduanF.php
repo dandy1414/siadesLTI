@@ -4,7 +4,7 @@ class PengaduanF extends CI_Controller{
 
     public function index()
     {
-        $data['judul'] = 'Halaman Pengduan';
+        $data['judul'] = 'Halaman Pengaduan';
 
         $this->load->view('templates/header', $data);
         $this->load->view('pengaduan/index');

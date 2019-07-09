@@ -11,11 +11,8 @@
         <p align="center"><?= $row->isi_layanan; ?></p>
         <br>
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"></div>
-            <div class="col-md-2"><a class="btn btn-info" <?php if (!empty($row->file))
-   { ?> href="<?= base_url('assets/document/' . $row->file); ?>" <?php } else { ?>
+            <div class="col text-center"><a class="btn btn-info" <?php if (!empty($row->file))
+            { ?> href="<?= base_url('assets/document/' . $row->file); ?>" <?php } else { ?>
                     onclick="alert('Maaf, form belum tersedia')" ; <?php } ?>>Download Form</a>
                 <?php endforeach; ?>
             </div>
