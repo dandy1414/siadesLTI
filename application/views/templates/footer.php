@@ -49,7 +49,7 @@
 		<div class="copyright">
 			<p>© <?php 
 			$tgl=date('Y');
-			echo $tgl; ?>. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+			echo $tgl; ?>. All Rights Reserved | Design by <a href="http://w3layouts.com/">WL</a> </p>
 		</div>
 	</div>
 </div>
