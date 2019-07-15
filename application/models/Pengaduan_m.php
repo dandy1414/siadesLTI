@@ -34,7 +34,7 @@ class Pengaduan_m extends CI_Model {
     }
 
     function select_pengaduan() {
-        $query = $this->db->query("SELECT * FROM pengaduan order by tanggal DESC limit 5");
+        $query = $this->db->query("SELECT * FROM pengaduan order by tanggal");
         return $query->result();
     }
 

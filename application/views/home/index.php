@@ -1,49 +1,49 @@
 <section>
-	<div class="container">
-		<!-- Carousel -->
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner" style="width:100%;">
-				<?php 
+	<!-- <div class="container-fluid"> -->
+	<!-- Carousel -->
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" style="height:500px;">
+			<?php 
 			$galeri = $this->Galeri_m->tampilCarousel();
 			$no = 0;
 			foreach ($galeri as $row) : 
 			if ( $no == 0 ) { ?>
-				<div class="carousel-item active">
-					<a href="<?=base_url();?>galerif">
-						<img class="d-block w-100 dandy"
-							src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>" alt="First slide">
-					</a>
-					<div class="carousel-caption d-none d-md-block">
-						<h3 style="color: #ffffff;"><?= $row->keterangan ; ?></h3>
-					</div>
+			<div class="carousel-item active">
+				<a href="<?=base_url();?>galerif">
+					<img class="d-block w-100 dandy" src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>"
+						alt="First slide">
+				</a>
+				<div class="carousel-caption d-none d-md-block">
+					<h3 style="color: #ffffff;"><?= $row->keterangan ; ?></h3>
 				</div>
-				<?php } else { ?>
-				<div class="carousel-item">
-					<a href="<?=base_url();?>galerif">
-						<img class="d-block w-100 dandy"
-							src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>" alt="First slide">
-					</a>
-					<div class="carousel-caption d-none d-md-block">
-						<h3 style="color: #ffffff;"><?= $row->keterangan ; ?></h3>
-					</div>
-				</div>
-				<?php }  ?>
-				<?php $no++; endforeach; ?>
 			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
+			<?php } else { ?>
+			<div class="carousel-item">
+				<a href="<?=base_url();?>galerif">
+					<img class="d-block w-100 dandy" src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>"
+						alt="First slide">
+				</a>
+				<div class="carousel-caption d-none d-md-block">
+					<h3 style="color: #ffffff;"><?= $row->keterangan ; ?></h3>
+				</div>
+			</div>
+			<?php }  ?>
+			<?php $no++; endforeach; ?>
 		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
 	</div>
 </section>
 <!-- Carousel -->
@@ -91,7 +91,7 @@
 </div>
 </div>
 
-<div class="container pt-5">
+<div class="container pt-3">
 	<div class="choose text-center d-lg-flex">
 		<div class="choose-icon"><a href="<?=base_url();?>programf">
 				<span aria-hidden="true"><i class="material-icons">library_books</i></span>

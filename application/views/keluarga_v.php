@@ -37,7 +37,6 @@
                                                onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                                             <a class="btn btn-info" href="<?php echo site_url('Keluarga/select_by/' . $row->id_keluarga); ?>">Edit</a>
                                         </td>
-                                        <td></td>
                                     </tr>
 
                                 <?php } ?>
@@ -46,7 +45,8 @@
                                     <td></td>
                                     <td>
                                         <?php echo $total ?>
-                                    </td></tr>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

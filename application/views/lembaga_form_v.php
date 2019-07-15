@@ -20,8 +20,6 @@
                             <label for="comment">Detail Lembaga:</label>
                             <textarea class="form-control" rows="5" name="in_detail_lembaga" required=""></textarea>
                         </div>
-
-
                         <button style ="margin-bottom:25px" class="btn btn-success" 
                                 type="submit">Simpan</button>
                     </form>

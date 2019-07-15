@@ -10,23 +10,23 @@
                       
                     <li class="active ripple">
                       <a href="<?php Echo site_url('Berita/index')?>">
-                        <span class="fa-home fa"></span>Berita</a>
+                        <span class="fa fa-newspaper-o"></span>Berita</a>
                     </li>
-                    <!--<li class="active ripple">
-                      <a href="<?php Echo site_url('Kategori/index')?>">
-                        <span class="fa-home fa"></span>Kategori</a>
-                    </li>-->
+                    <li class="active ripple">
+                      <a href="<?php Echo site_url('Pengaduan/index')?>">
+                        <span class="fa fa-file-text"></span>Aduan</a>
+                    </li>
                      <li class="active ripple">
                       <a href="<?php Echo site_url('Pengumuman/index')?>">
-                        <span class="fa-home fa"></span>Pengumuman</a>
+                        <span class="fa fa-bullhorn"></span>Pengumuman</a>
                     </li>
                     
                      <li class="active ripple">
                       <a href="<?php Echo site_url('Galeri/index')?>">
-                        <span class="fa-home fa"></span>Galeri</a>
+                        <span class="fa fa-picture-o"></span>Galeri</a>
                     </li>
                      <li class="ripple"><a class="tree-toggle nav-header">
-                      <span class="fa-home fa"></span>Data Desa<span class="fa-angle-right fa right-arrow text-right"></span> </a>
+                      <span class="fa fa-info-circle"></span>Data Desa<span class="fa-angle-right fa right-arrow text-right"></span> </a>
                       <ul class="nav nav-list tree">
                        <li class="ripple"><a href="<?php echo site_url('Balita')?>"><span class="fa fa-table"></span>Balita</a></li>
                        <li class="ripple"><a href="<?php echo site_url('Pendidikan')?>"><span class="fa fa-table"></span>Pendidikan</a></li>
@@ -37,19 +37,19 @@
                     </li>
                     <li class="active ripple">
                       <a href="<?php Echo site_url('Programdesa/index')?>">
-                        <span class="fa-home fa"></span>Program Desa</a>
+                        <span class="fa fa-thumb-tack"></span>Program Desa</a>
                     </li>
                     <li class="active ripple">
                       <a href="<?php Echo site_url('Layanan/index')?>">
-                        <span class="fa-home fa"></span>Layanan</a>
+                        <span class="fa fa-server"></span>Layanan</a>
                     </li>
                     <li class="active ripple">
                       <a href="<?php Echo site_url('Potensidesa/index')?>">
-                        <span class="fa-home fa"></span>Potensi Desa</a>
+                        <span class="fa fa-map-marker"></span>Potensi Desa</a>
                     </li>
                      <li class="active ripple">
                       <a href="<?php Echo site_url('Lembaga/index')?>">
-                        <span class="fa-home fa"></span>Lembaga</a>
+                        <span class="fa fa-university"></span>Lembaga</a>
                     </li>
                       </ul>
                     </li>

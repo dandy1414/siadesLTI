@@ -75,15 +75,12 @@ class Berita extends CI_Controller {
                 'judul' => $this->input->post('judul'),
                 'kategori' => $this->input->post('kategori'),
                 'isi' => $this->input->post('isi')
-               
             );
 //            $error = array(
 //                'error' => $this->upload->display_errors()
 //            );
 //            echo json_encode($error);
         }
-
-
         $this->Berita_m->edit_db($id_berita, $data);
         redirect('Berita');
     }

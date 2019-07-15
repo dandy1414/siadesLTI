@@ -7,6 +7,7 @@
             <div class="panel">
               <!--<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Galeri'); ?>">Data Pendidikan</a></div>-->
                 <div class="panel-body">
+                        <h1>Form ubah data galeri</h1>
                         <?php
                         foreach ($galeri as $row) {
                             ?>
@@ -22,7 +23,7 @@
                                 </div> 
                                 <div clas="form_group">
                                     <label for="usr">Gambar:</label>
-                                    <input type="file" class="form-control" name="in_gambar">
+                                    <input type="file" class="form-control" name="gambar">
                                 </div>
                                 <div class="form-group">
                                     <img src="<?php echo base_url();

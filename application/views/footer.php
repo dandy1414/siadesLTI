@@ -12,6 +12,7 @@
 <script src="<?php echo base_url();?>asset/js/plugins/datatables.bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>asset/js/plugins/bootstrap-material-datetimepicker.js"></script>
 <script src="<?php echo base_url();?>asset/js/plugins/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>asset/js/plugins/ckeditor/ckeditor.js"></script>
 
 
 <!-- custom -->

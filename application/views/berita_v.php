@@ -41,7 +41,6 @@
                                                onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                                             <a class="btn btn-info" href="<?php echo site_url('Berita/select_by/' . $row->id_berita); ?>">Edit</a>
                                         </td>
-                                        <td></td>
                                     </tr>
 
                                 <?php } ?>

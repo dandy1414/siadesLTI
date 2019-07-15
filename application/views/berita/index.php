@@ -4,13 +4,13 @@
 		<br>
 		<br>
 		<h1 align="center">Berita</h1>
-		<div class="row mt-5 pl-3">
-			<div class="col-md-2">
+		<div class="row mt-5">
+			<div class="col-xs-2">
 				<form class="form-inline" action="" method="post">
-					<input class="form-control" placeholder="Cari Berita.." name="keyword">
+					<input class="form-control ml-4" placeholder="Cari Berita.." name="keyword">
 			</div>
-			<div class="col-md-2">
-				<button type="submit" class="btn btn-primary">Cari</button>
+			<div class="col-xs-2">
+				<button type="submit" class="btn btn-primary ml-2">Cari</button>
 			</div>
 			</form>
 		</div>

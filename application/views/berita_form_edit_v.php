@@ -1,14 +1,23 @@
 <?php $this->load->view('header');?>
 <?php $this->load->view('sidebar');?>
 
+<script>
+var ckeditor = CKEDITOR.replace('isi',{
+	height: '600px'
+});
+
+CKEDITOR.disableAutoInline = true;
+CKEDITOR.inline('editable');
+</script>
+
 <div id="content">
 	<div class="col-md-12 top-20 padding-0">
 		<div class="col-md-12">
 			<div class="panel">
 				<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Berita'); ?>">Data
-						Pendidikan</a></div>
+						Berita</a></div>
 				<div class="panel-body">
-
+				<h1>Form ubah data berita</h1>
 					<?php
             		foreach ($berita as $row) { ?>
 					<form method="post" action="<?php echo site_url('Berita/edit'); ?>" enctype="multipart/form-data">
@@ -41,11 +50,6 @@
 							</select>
 
 						</div>
-						<div class="form-group">
-							<label for="comment">Isi:</label>
-							<input type="text" class="form-control" name="isi" required=""
-								value="<?php echo $row->isi; ?>">
-						</div>
 						<div clas="form_group">
 							<label for="usr">Gambar:</label>
 							<input type="file" required="" class="form-control" name="gambar">
@@ -60,6 +64,10 @@
 							<img src="<?php echo base_url();?>assets/upload/<?php echo $row->gambar; ?>" style="width: 80px">
 						</div>
 						<input type="hidden" name="nm_foto" value="<?php echo $row->gambar; ?>">
+						<div>
+							<label for="usr">Isi</label>
+							<textarea class="ckeditor" id="isi" name="isi" style="height:800px;"><?= $row->isi; ?></textarea>
+						</div>
 						<button class="btn btn-success" type="submit">Simpan</button>
 					</form>
 					<?php } ?>

@@ -7,6 +7,7 @@
             <div class="panel">
               <!--<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Lansia'); ?>">Data Pendidikan</a></div>-->
                 <div class="panel-body">
+                <h1>Form ubah data lansia</h1>
                         <?php
                         foreach ($lansia as $row) {
                             ?>

@@ -5,12 +5,12 @@
 		<br>
 		<h1 align="center">Layanan</h1>
 		<div class="row mt-5 pl-3">
-			<div class="col-md-2">
+			<div class="col-xs-2">
 				<form class="form-inline" action="" method="post">
 					<input class="form-control" placeholder="Cari Layanan.." name="keyword">
 			</div>
-			<div class="col-md-2">
-				<button type="submit" class="btn btn-primary ml-5">Cari</button>
+			<div class="col-xs-2">
+				<button type="submit" class="btn btn-primary ml-2">Cari</button>
 			</div>
 			</form>
 		</div>

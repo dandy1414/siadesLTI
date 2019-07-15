@@ -54,9 +54,6 @@
 										Login
 									</button>
 								</div>
-								<div class="container-login100-form-btn m-t-32">
-									<p class="card-text"><small class="text-muted">Belum mempunyai akun?</small></p>
-								</div>
 							</form>
 						</div>
 					</div>

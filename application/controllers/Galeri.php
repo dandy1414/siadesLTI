@@ -4,9 +4,9 @@ class Galeri extends CI_Controller {
     
    public function __construct() {
         parent::__construct();
-        if (!$this->session->has_userdata('username')) {
+        if($this->session->userdata('status') != "login"){
             redirect('Akunadmin/login');
-        }
+		}
     }
 
     function form() {
@@ -34,8 +34,6 @@ class Galeri extends CI_Controller {
             );
             echo json_encode($error);
         }
-
-       
     }
 
     function index() {
@@ -62,7 +60,7 @@ class Galeri extends CI_Controller {
         $config['overwrite'] = TRUE;
         $this->upload->initialize($config);
         
-        if($this->upload->do_upload('in_gambar')){
+        if($this->upload->do_upload('gambar')){
             $gambar = $this->upload->data();
             $data = array(
                 'keterangan' =>$this->input->post('in_keterangan'),
@@ -70,20 +68,14 @@ class Galeri extends CI_Controller {
             );
         }else{
             $data = array(
-                
                 'keterangan' => $this->input->post('in_keterangan')
             );
-//            $error = array(
-//                'error' => $this->upload->display_errors()
-//            );
-//            echo json_encode($error);
+           $error = array(
+               'error' => $this->upload->display_errors()
+           );
+           echo json_encode($error);
         }
-       
-
         $this->Galeri_m->edit_db($id_galeri, $data);
         redirect('Galeri');
     }
-    
-
-
 }
