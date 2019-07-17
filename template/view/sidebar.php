@@ -5,7 +5,7 @@
                     <!-- <li><div class="left-bg"></div></li> -->
                     <li class="time">
                       <h1 class="animated fadeInLeft">21:00</h1>
-                      <p class="animated fadeInRight">Sat,October 1st 2029</p>
+                      <p class="animated fadeInRight">Sat,October 1st 2029ss</p>
                     </li>
                       <li class="active ripple">
                       <a href="<?php Echo site_url('pelanggan/get_pelanggan')?>">

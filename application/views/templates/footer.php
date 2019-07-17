@@ -1,10 +1,3 @@
-<div class="container">
-	<div class="row">
-		<div class="col text-center">
-			<button type="button" class="btn btn-primary">Download Android Apps</button>
-		</div>
-	</div>
-</div>
 <section class="footer-top py-5 mt-1" style="background-color: #0000ff">
 	<div class="container">
 		<div class="row footer-top-grid">

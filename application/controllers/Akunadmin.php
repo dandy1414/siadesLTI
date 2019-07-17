@@ -4,7 +4,7 @@ class Akunadmin extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        if ($this->session->has_userdata('username')){
+        if ($this->session->has_userdata('username') && $this->session->has_userdata('level') == "admin" ){
             redirect('Pendidikan');
         }
     }
@@ -36,13 +36,16 @@ class Akunadmin extends CI_Controller {
 		if($cek > 0){
 			$data_session = array(
 				'nama' => $username,
-				'status' => "login"
+                'status' => "login",
+                'level' =>"admin"
 				);
 
             $this->session->set_userdata($data_session);
             redirect('Pendidikan');
 		}else{
+            $this->session->set_flashdata('gagal', 'Anda gagal login!');
             redirect('Akunadmin/login');
+
 		}
     }
     

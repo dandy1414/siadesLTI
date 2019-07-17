@@ -52,7 +52,7 @@ CKEDITOR.inline('editable');
 						</div>
 						<div clas="form_group">
 							<label for="usr">Gambar:</label>
-							<input type="file" required="" class="form-control" name="gambar">
+							<input type="file" class="form-control" name="gambar">
 						</div>
 						<div class="form-group">
 							<label for="comment">Tanggal:</label>

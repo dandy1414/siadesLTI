@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //google fonts -->
 	<link href="<?php echo base_url()?>/assets/frontend/css/font.css" rel="stylesheet">
 	
-</head>
+</head>  
 <header>
 		<!-- nav -->
 	<div class="container-fluid" style="background-color: #0000ff">
@@ -49,7 +49,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>profil" >Profil Desa</a></li>
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>pengaduanf">Pengaduan</a></li>
 				<li class="mr-lg-4 mr-2"><a href="#">Download App</a></li>
-				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>pendidikan">Login</a></li>
+				<?php
+				if($this->session->userdata('status') == "login"){ ?>
+					<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>Logout/user" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a></li>
+				<?php } else { ?>
+					<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>Akunadmin/Login">Admin</a></li>
+					<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>User">Login</a></li>
+				<?php } ?>
+				
 			</ul>
 		</nav>
 	</div>

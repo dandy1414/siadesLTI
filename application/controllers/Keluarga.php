@@ -4,7 +4,7 @@ class Keluarga extends CI_Controller{
     
     public function __construct() {
         parent::__construct();
-        if($this->session->userdata('status') != "login"){
+        if($this->session->userdata('level') !== "admin"){
             redirect('Akunadmin/login');
 		}
     }

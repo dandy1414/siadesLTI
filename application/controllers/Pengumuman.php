@@ -1,16 +1,15 @@
 <?php
 class Pengumuman extends CI_Controller{
     
-   public function __construct() {
+    public function __construct() {
         parent::__construct();
-        if($this->session->userdata('status') != "login"){
+        if($this->session->userdata('level') !== "admin"){
             redirect('Akunadmin/login');
 		}
     }
     
     function form() {     
         $this->load->view('pengumuman_form_v');
-        
     }
     
     function insert() { 
@@ -26,9 +25,8 @@ class Pengumuman extends CI_Controller{
              $gambar = $this->upload->data();   
              $data = array(       
                  'judul' => $this->input->post('in_judul'),
-                 'isi' => $this->input->post('in_isi'),       
-                 'gambar' => $gambar['file_name']);
-  //                 'tanggal' => $this->input->post('in_tanggal')  );    
+                 'isi' => $this->input->post('isi'),       
+                 'gambar' => $gambar['file_name']);    
              $this->Pengumuman_m->insert_db($data);
          
          } 
@@ -55,7 +53,7 @@ class Pengumuman extends CI_Controller{
     
     function select_by($id) {
         $data['pengumuman'] = $this->Pengumuman_m->select_by_db($id);
-        $this->load   ->view('pengumuman_form_edit_v', $data);
+        $this->load->view('pengumuman_form_edit_v', $data);
     
     } 
     

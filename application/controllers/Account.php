@@ -1,47 +1,82 @@
 <?php
 class Account extends CI_Controller{
+    public function __construct() {
+        parent::__construct();
+        if($this->session->userdata('level') !== "admin"){
+            redirect('Akunadmin/login');
+		}
+    }
     
     function registrasi() { 
        // $this->load->library('session');
         $this->load->view('registrasi_v');
-        
+    }
+
+    function index()
+    {
+        $data['user'] = $this->User_m->selectAllUser();
+        $this->load->view('user_v', $data);          
+    }
+
+    function form() {     
+        $this->load->view('user_form_v');
     }
     
     function insert() { 
         $data = array(     
-            'jenis_kelamin' => $this->input->post('in_jenis_kelamin'),
              'alamat' => $this->input->post('in_alamat'),
-             'email' => $this->input->post('in_email'),     
-             'password' => $this->input->post('in_password') );   
-        $this->Registrasi_m->registrasi($data); 
-        redirect('Account/login');
-        
+             'username' => $this->input->post('in_username'),     
+             'password' => $this->input->post('in_password'),
+             'jenis_kelamin' => $this->input->post('in_jenis_kelamin')
+            );   
+        $this->User_m->registrasi($data); 
+        redirect('Account');   
+    }
+
+    function select_by($id) {
+        $data['user'] = $this->User_m->select_by_db($id);
+        $this->load   ->view('user_form_edit_v', $data);
+    }
+
+    function delete($id_user) {
+        $this->User_m->delete_db($id_user);
+        redirect('Account');
+    }
+
+    function edit() {
+        $id = $this->input->post('id');
+        $data = array(
+            'username' => $this->input->post('in_username'),
+            'password' => $this->input->post('in_password'),
+            'alamat' => $this->input->post('in_alamat'),
+        );
+        $this->User_m->edit_db($id, $data);
+        redirect('Account');
     }
     
     function login(){
         $this->load->view('login_v');
-        
-        
     }
+
     function proses_login(){
-        $username = $this->input->post('in_username');
-        $pass = $this->input->post('in_password');
-        $kondisi = array(
-            'email'=>$username,
-            'password'=>$pass
-        );
-        $result=$this->Registrasi_m->login($kondisi);
-        print_r($result);
-        if(sizeof($result)>0){
-            $data = array('email'=>$username);
-            $this->session->set_userdata($data);
+		$username = $this->input->post('in_username');
+		$password = $this->input->post('in_password');
+		$where = array(
+			'username' => $username,
+			'password' => ($password)
+			);
+		$cek = $this->User_m->cek_login("user",$where)->num_rows();
+		if($cek > 0){
+			$data_session = array(
+				'nama' => $username,
+				'status' => "login"
+				);
+
+            $this->session->set_userdata($data_session);
             redirect('Pendidikan');
-        }else{
-            echo 'login gagal!!';
-        }
+		}else{
+            redirect('Akunadmin/login');
+		}
+    }
                 
     }
-    
-    
-    
-}
