@@ -1,7 +1,7 @@
 <section>
     <br>
     <br>
-    <div class="container pt-5">
+    <div class="container pt-5 mb-5">
         <?php foreach ($layanan as $row) : ?>
         <h1 align="center"><?= $row->nama_layanan; ?></h1>
 

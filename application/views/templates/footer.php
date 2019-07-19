@@ -5,7 +5,7 @@
 				<h3>Kontak kami</h3>
 			</div>
 			<div class="col-sm-6 text-sm-right mt-sm-0 mt-3">
-				<h3><span class="fa fa-phone" aria-hidden="true"></span> +6282221777206</h3>
+				<a href="https://api.whatsapp.com/send?phone=+6282221777206&text=Halo Admin lauwba"><h3><span class="fa fa-phone" aria-hidden="true"></span> +6282221777206</h3></a>
 			</div>
 		</div>
 	</div>
@@ -43,7 +43,7 @@
 		</div>
 		<!-- move top -->
 		<div class="move-to-top text-center">
-			<a href="#home" class="move-top"><span class="fa fa-angle-double-up" aria-hidden="true"></span></a>
+			<a href="#top" class="move-top"><span class="fa fa-angle-double-up" aria-hidden="true"></span></a>
 		</div>
 		<!-- //move top -->
 		<div class="copyright">

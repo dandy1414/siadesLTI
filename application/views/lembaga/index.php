@@ -1,5 +1,5 @@
 <section>
-	<div class="container pt-5">
+	<div class="container pt-5 mb-5">
 		<br>
 		<br>
 		<br>

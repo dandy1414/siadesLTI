@@ -45,10 +45,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<label for="drop" class="toggle">Menu</label>
 			<input type="checkbox" id="drop" />
 			<ul class="menu mt-md-2 ml-auto">
-				<li class="mr-lg-4 mr-2 active"><a href="<?= base_url(); ?>">Home</a></li>
-				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>profil" >Profil Desa</a></li>
+			<li class="mr-lg-4 mr-2">
+			<a href="<?= base_url(); ?>" data-selector="nav a" style="cursor: pointer;">Home</a>
+                    <input type="checkbox" id="drop-2">
+                    <ul class="inner-ul">
+                        <li><a href="<?= base_url(); ?>layananf" data-selector="nav a">Layanan</a>
+                        </li>
+                        <li><a href="<?= base_url(); ?>beritaf" data-selector="nav a">Berita</a>
+                        </li>
+                        <li><a href="<?= base_url(); ?>pengumumanf" data-selector="nav a">Pengumuman</a></li>
+                        <li><a href="<?= base_url(); ?>galerif" data-selector="nav a">Galeri</a></li>
+                        <li><a href="<?= base_url(); ?>potensif" data-selector="nav a">Potensi</a></li>
+                        <li><a href="<?= base_url(); ?>programf" data-selector="nav a">Program</a></li>
+                        <li><a href="<?= base_url(); ?>lembagaf" data-selector="nav a">Lembaga</a></li>
+                        <li><a href="<?= base_url(); ?>datadesaf" data-selector="nav a">Data</a></li>
+                    </ul>
+                </li>
+
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>pengaduanf">Pengaduan</a></li>
-				<li class="mr-lg-4 mr-2"><a href="#">Download App</a></li>
 				<?php
 				if($this->session->userdata('status') == "login"){ ?>
 					<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>Logout/user" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a></li>
