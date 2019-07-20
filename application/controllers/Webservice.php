@@ -908,6 +908,20 @@ class Webservice extends CI_Controller{
         }
     }
 
+    function select_user(){
+        $response = array();
+        $data['data'] = array();
+
+        $result = $this->User_m->selectAllUser();
+
+        if(sizeof($result) > 0){
+            foreach($result as $value){
+                $response['id_user'] = $value->id_user;
+                
+            }
+        }
+    }
+
 
 
 }

@@ -11,35 +11,31 @@
                         <p><a class="btn btn-success" href="<?php echo site_url('Lembaga/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>              
                         <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                             <thead>
-
+                                <tr>    
+                                    <th scope="col">Nomor</th>
+                                    <th scope="col">Nama Lembaga</th>
+                                    <th scope="col">Detail Lembaga</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <?php
                                 $lembaga = $this->Lembaga_m->select_db();
                                 $no = 1;
-                                foreach ($lembaga as $row) {
-                                    ?>    
-
+                                foreach ($lembaga as $row) {?>    
                                     <tr>
                                         <th scope="row"><?php echo $no++; ?></th>
                                         <td><?php echo $row->nama_lembaga; ?></td>
                                         <td><?php echo $row->detail_lembaga; ?></td>
-                                        <td>
-                                            <a class="btn btn-danger" href="<?php echo
-                                site_url('Lembaga/delete/' . $row->id_lembaga);
-                                    ?>"                                        
-                                               onclick="return confirm('Apakah anda yakin akan menghapus?')">Hapus </a>
-
-                                            <a class="btn btn-info" href="<?php
-                                               echo
-                                               site_url('Lembaga/select_by/' . $row->id_lembaga);
-                                               ?>">Edit</a>
+                                        <td><a class="btn btn-danger" href="<?php echo site_url('Lembaga/delete/' . $row->id_lembaga); ?>" onclick="return confirm('Apakah anda yakin akan menghapus?')">Hapus</a> 
+                                            <a class="btn btn-info" href="<?php echo site_url('Lembaga/select_by/' . $row->id_lembaga); ?>">Edit</a>
                                         </td>
-                                    </tr>
-<?php } ?>
+                                    </tr>	
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
     </div>

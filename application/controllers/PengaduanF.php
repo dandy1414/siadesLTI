@@ -4,7 +4,14 @@ class PengaduanF extends CI_Controller{
     public function __construct() {
         parent::__construct();
         if ( $this->session->userdata('level') !== "user" ){
-            redirect('User');
+            echo "<script>var a = confirm('Anda harus login terlebih dahulu');
+  
+            if(a){
+            location.assign('".site_url('User')."');
+          } else {
+            location.assign('".site_url('Home')."');
+          }
+          </script>";
         }
     }
 

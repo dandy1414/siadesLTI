@@ -27,4 +27,4 @@
         </div>
     </div>
 </div>    
-<?php $this->load->view('sidebar'); ?>
+<?php $this->load->view('footer'); ?>

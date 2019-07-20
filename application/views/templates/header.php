@@ -46,7 +46,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<input type="checkbox" id="drop" />
 			<ul class="menu mt-md-2 ml-auto">
 			<li class="mr-lg-4 mr-2">
-			<a href="<?= base_url(); ?>" data-selector="nav a" style="cursor: pointer;">Home</a>
+
+			<?php if($this->uri->segment('1') == 'Home' ||  $this->uri->segment('1') == '' || $this->uri->segment('1') == 'home') { ?>
+				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>Home">Home</a></li>
+			<?php } else { ?>
+					<a href="<?= base_url(); ?>" data-selector="nav a" style="cursor: pointer;">Home</a>
                     <input type="checkbox" id="drop-2">
                     <ul class="inner-ul">
                         <li><a href="<?= base_url(); ?>layananf" data-selector="nav a">Layanan</a>
@@ -61,10 +65,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="<?= base_url(); ?>datadesaf" data-selector="nav a">Data</a></li>
                     </ul>
                 </li>
+			<?php } ?>
 
 				<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>pengaduanf">Pengaduan</a></li>
 				<?php
-				if($this->session->userdata('status') == "login"){ ?>
+				if($this->session->userdata('status') == "login" && $this->session->userdata('level') == "user"){ ?>
 					<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>Logout/user" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a></li>
 				<?php } else { ?>
 					<li class="mr-lg-4 mr-2"><a href="<?= base_url(); ?>Akunadmin/Login">Admin</a></li>

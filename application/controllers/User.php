@@ -31,7 +31,7 @@ class User extends CI_Controller{
 			'username' => $username,
 			'password' => $password
 			);
-		$cek = $this->User_m->cek_login("user",$where)->num_rows();
+        $cek = $this->User_m->cek_login("user",$where)->num_rows();
 		if($cek > 0){
 			$data_session = array(
 				'nama' => $username,
@@ -42,6 +42,7 @@ class User extends CI_Controller{
             $this->session->set_userdata($data_session);
             redirect('Pengaduanf');
 		}else{
+            $this->session->set_flashdata('flash', 'Anda gagal login');
             redirect('User');
 		}
     }

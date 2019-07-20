@@ -15,11 +15,12 @@
 			</form>
 		</div>
 
-		<?php  if (empty($berita)) { ?>
-		<div class="alert alert-danger pt-5" role="alert">Maaf, berita yang anda cari tidak ditemukan
+		<?php if(!empty($pesan) && empty($cari_berita) ) { ?>
+		<div class="alert alert-danger mt-2 ml-2" role="alert"><?php echo $pesan ?>
 		</div>
 		<?php } ?>
-
+		
+		<?php if(empty($cari_berita)) { ?>
 		<div class="container pt-3">
 			<div class="accordion" id="accordionExample">
 				<?php
@@ -63,5 +64,21 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
+		<?php } else { ?>
+		<?php
+		foreach($cari_berita as $row) : ?> 
+		<div class="card mt-5">
+			<img src="<?= base_url(); ?>assets/upload/<?php echo $row->gambar; ?>"
+				class="card-img-top" alt="...">
+					<div class="card-body">
+						<a href="<?php echo site_url('Beritaf/detailBerita/' . $row->id_berita); ?>">
+							<h5 class="card-title"><?= $row->judul; ?>
+						</a></h5>
+							<p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?= $row->isi; ?></p>
+							<p class="card-text"><small class="text-muted"><?= $row->tanggal; ?> WIB</small></p>
+					</div>
+		</div>
+		<?php endforeach; ?>
+		<?php } ?>
 	</div>
 </section>

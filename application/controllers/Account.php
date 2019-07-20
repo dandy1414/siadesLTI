@@ -24,10 +24,10 @@ class Account extends CI_Controller{
     
     function insert() { 
         $data = array(     
-             'alamat' => $this->input->post('in_alamat'),
-             'username' => $this->input->post('in_username'),     
-             'password' => $this->input->post('in_password'),
-             'jenis_kelamin' => $this->input->post('in_jenis_kelamin')
+             'alamat' => htmlspecialchars($this->input->post('in_alamat', TRUE)),
+             'username' => htmlspecialchars($this->input->post('in_username', TRUE)),     
+             'password' => htmlspecialchars($this->input->post('in_password', TRUE)),
+             'jenis_kelamin' => htmlspecialchars($this->input->post('in_jenis_kelamin', TRUE))
             );   
         $this->User_m->registrasi($data); 
         redirect('Account');   
@@ -46,9 +46,9 @@ class Account extends CI_Controller{
     function edit() {
         $id = $this->input->post('id');
         $data = array(
-            'username' => $this->input->post('in_username'),
-            'password' => $this->input->post('in_password'),
-            'alamat' => $this->input->post('in_alamat'),
+            'username' => htmlspecialchars($this->input->post('in_username', TRUE)),
+            'password' => htmlspecialchars($this->input->post('in_password', TRUE)),
+            'alamat' => htmlspecialchars($this->input->post('in_alamat', TRUE))
         );
         $this->User_m->edit_db($id, $data);
         redirect('Account');

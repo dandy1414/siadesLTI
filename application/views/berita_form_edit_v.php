@@ -55,15 +55,14 @@ CKEDITOR.inline('editable');
 							<input type="file" class="form-control" name="gambar">
 						</div>
 						<div class="form-group">
+							<img src="<?php echo base_url();?>assets/upload/<?php echo $row->gambar; ?>" style="width: 80px; padding-top: 15px">
+						</div>
+						<input type="hidden" name="nm_foto" value="<?php echo $row->gambar; ?>">
+						<div class="form-group">
 							<label for="comment">Tanggal:</label>
 							<input type="text" class="form-control" name="tanggal" required=""
 								value="<?php echo $row->tanggal; ?>">
 						</div>
-
-						<div class="form-group">
-							<img src="<?php echo base_url();?>assets/upload/<?php echo $row->gambar; ?>" style="width: 80px">
-						</div>
-						<input type="hidden" name="nm_foto" value="<?php echo $row->gambar; ?>">
 						<div>
 							<label for="usr">Isi</label>
 							<textarea class="ckeditor" id="isi" name="isi" style="height:800px;"><?= $row->isi; ?></textarea>

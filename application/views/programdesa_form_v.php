@@ -9,6 +9,7 @@
                     <a class="btn btn-info" href="<?php echo site_url('Programdesa'); ?>">Data Program Desa</a>
                 </div>
                 <div class="panel-body">
+                    
 
                     <form method="post" action="<?php echo site_url('Programdesa/insert'); ?>">
                         <div class="form-group">
@@ -31,4 +32,4 @@
     </div>
 </div>
 </div>
-<!-- <?php $this->load->view('sidebar'); ?> -->
+<?php $this->load->view('footer'); ?>

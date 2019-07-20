@@ -13,8 +13,13 @@ class BeritaF extends CI_Controller{
         // $data['kategori'] = $this->Berita_m->tampilBeritaAgama($id);
         $keyword = $this->input->post('keyword');
         if (!empty($keyword)){
-            $data['berita'] = $this->Berita_m->cariDataBerita($keyword);
+            $data['cari_berita'] = $this->Berita_m->cariDataBerita($keyword);
+            
+            $data['pesan'] = 'Maaf, berita yang anda cari tidak ditemukan';
         }
+
+        // print_r($data['berita']);
+        // die();
         $this->load->view('templates/header', $data);
         $this->load->view('berita/index', $data);
         $this->load->view('templates/footer');

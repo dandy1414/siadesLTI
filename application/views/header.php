@@ -30,6 +30,9 @@
  
   </head>
 
+  <?php
+  $user = $this->session->userdata('nama');?>
+
 <body id="mimin" class="dashboard">
       <!-- start: Header -->
         <nav class="navbar navbar-default header navbar-fixed-top">
@@ -50,6 +53,7 @@
                   <li class="dropdown avatar-dropdown">
                    <img src="<?php echo base_url();?>asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
+                    <li><a href=""><span class="fa fa-user "></span> <?php echo $user; ?></a></li>
                      <li><a href="<?php echo site_url('Logout/admin')?>" onclick="return confirm('Apakah anda yakin ingin keluar?')"><span class="fa fa-power-off "></span> Sign Out</a></li>
                   </ul>
                 </li>

@@ -15,9 +15,9 @@
 	<div class="col-md-12 top-20 padding-0">
 		<div class="col-md-12">
 			<div class="panel">
-			<h1>Form ubah data pengumuman</h1>
-				<!--<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Pengumuman'); ?>">Data Pendidikan</a></div>-->
+				<div class="panel-heading"><a class="btn btn-info" href="<?php echo site_url('Pengumuman'); ?>">Data Pengumuman</a></div>
 				<div class="panel-body">
+				<h1>Form ubah data pengumuman</h1>
 					<?php
                         foreach ($pengumuman as $row) {
                             ?>

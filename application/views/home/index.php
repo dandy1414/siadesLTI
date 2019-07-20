@@ -168,5 +168,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="col text-center">
+		<button type="button" class="btn btn-primary">Download Android Apps</button>
+	</div>
 </section>
 <!--//Blog-Posts-->

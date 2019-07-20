@@ -26,8 +26,8 @@ class Akunadmin extends CI_Controller {
     }
 
     function proses_login(){
-		$username = $this->input->post('in_username');
-		$password = $this->input->post('in_password');
+		$username = htmlspecialchars($this->input->post('in_username', TRUE));
+		$password = htmlspecialchars($this->input->post('in_password', TRUE));
 		$where = array(
 			'username' => $username,
 			'password' => $password
@@ -43,9 +43,8 @@ class Akunadmin extends CI_Controller {
             $this->session->set_userdata($data_session);
             redirect('Pendidikan');
 		}else{
-            $this->session->set_flashdata('gagal', 'Anda gagal login!');
+            $this->session->set_flashdata('flash', 'Anda gagal login');
             redirect('Akunadmin/login');
-
 		}
     }
     
