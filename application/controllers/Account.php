@@ -30,6 +30,7 @@ class Account extends CI_Controller{
              'jenis_kelamin' => htmlspecialchars($this->input->post('in_jenis_kelamin', TRUE))
             );   
         $this->User_m->registrasi($data); 
+        $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
         redirect('Account');   
     }
 
@@ -51,6 +52,7 @@ class Account extends CI_Controller{
             'alamat' => htmlspecialchars($this->input->post('in_alamat', TRUE))
         );
         $this->User_m->edit_db($id, $data);
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
         redirect('Account');
     }
     

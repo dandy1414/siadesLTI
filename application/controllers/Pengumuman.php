@@ -28,7 +28,7 @@ class Pengumuman extends CI_Controller{
                  'isi' => $this->input->post('isi'),       
                  'gambar' => $gambar['file_name']);    
              $this->Pengumuman_m->insert_db($data);
-         
+             $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
          } 
          else {   
              $error = array(   
@@ -83,7 +83,8 @@ class Pengumuman extends CI_Controller{
          
          } 
          $this->Pengumuman_m->edit_db($id, $data);
-         redirect('Pengumuman');
+         $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+         redirect('Pengumuman/index');
          
         
     }      

@@ -8,12 +8,17 @@
                 <div class="panel-heading"><h3>Data Pegumuman</h3></div>
                 <div class="panel-body">
                     <div class="responsive-table">
-                        <p><a class="btn btn-success" href="<?php echo site_url('Pengumuman/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>              
+                        <p><a class="btn btn-success" href="<?php echo site_url('Pengumuman/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>            
+                        <?php if($this->session->flashdata()) : ?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $this->session->flashdata('sukses'); ?>
+							</div>
+						<?php endif; ?>            
                         <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                             <thead>
                                 <tr>    
                                     <th scope="col">Nomor</th>
-                                    <th   scope="col">Judul</th>
+                                    <th scope="col">Judul</th>
                                     <th scope="col">Isi</th>
                                     <th scope="col">Gambar</th>
                                     <th scope="col">Tanggal</th>

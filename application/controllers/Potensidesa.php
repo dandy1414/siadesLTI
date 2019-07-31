@@ -32,10 +32,11 @@ class Potensidesa extends CI_Controller {
                 'keterangan' => $this->input->post('in_keterangan'));
 
             $this->Potensidesa_m->insert_db($data);
+            $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
         } else {
             $error = array('error' => $this->upload->display_errors());
             echo json_encode($error);
-        } redirect('Potensidesa');
+        } redirect('Potensidesa/index');
     }
 
     function index() {
@@ -79,10 +80,9 @@ class Potensidesa extends CI_Controller {
 //            );
 //            echo json_encode($error);
         }
-
-
         $this->Potensidesa_m->edit_db($id_potensi, $data);
-        redirect('Potensidesa');
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+        redirect('Potensidesa/index');
     }
 
     

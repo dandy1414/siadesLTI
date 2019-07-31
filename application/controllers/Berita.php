@@ -29,7 +29,8 @@ class Berita extends CI_Controller {
                 'gambar' => $gambar['file_name']
             );
             $this->Berita_m->insert_db($data);
-            redirect('Berita/form');
+            $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+            redirect('Berita/index');
         } else {
             $error = array(
                 'error' => $this->upload->display_errors()
@@ -82,6 +83,7 @@ class Berita extends CI_Controller {
 //            echo json_encode($error);
         }
         $this->Berita_m->edit_db($id_berita, $data);
-        redirect('Berita');
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+        redirect('Berita/index');
     }
 }

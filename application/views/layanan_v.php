@@ -8,15 +8,20 @@
                 <div class="panel-heading"><h3>Data Layanan</h3></div>
                 <div class="panel-body">
                     <div class="responsive-table">
-                        <p><a class="btn btn-success" href="<?php echo site_url('Layanan/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>              
+                        <p><a class="btn btn-success" href="<?php echo site_url('Layanan/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>
+                        <?php if($this->session->flashdata()) : ?>
+							<div class="alert alert-success" role="alert">
+								<?php echo $this->session->flashdata('sukses'); ?>
+							</div>
+						<?php endif; ?>              
                         <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                             <thead>
                                 <tr>    
                                     <th scope="col">Nomor</th>
                                     <th scope="col">Nama Layanan</th>
-                                    <th scope="col">Isi layanan</th>
+                                    <th scope="col">Isi layanan :</th>
                                     <th scope="col">Gambar</th>
-                                    <th scope="col">File</th>
+                                    <th scope="col">Form</th>
                                     <th scope="col">Aksi</th>
                                     <th scope="col"></th></tr>
                             </thead>  

@@ -42,6 +42,7 @@ class Keluarga extends CI_Controller{
             'jumlah' => $this->input->post('jumlah')
                 );
         $this->Keluarga_m->edit_db($id_keluarga, $data);
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
         redirect('Keluarga');
     }
    

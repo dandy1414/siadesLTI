@@ -23,7 +23,8 @@ class Programdesa extends CI_Controller {
             'keterangan' => $this->input->post('in_keterangan'));
 
         $this->Programdesa_m->insert_db($data);
-        redirect('Programdesa/form');
+        $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+        redirect('Programdesa/index');
     }
 
     function index() {
@@ -47,7 +48,8 @@ class Programdesa extends CI_Controller {
             'pekerjaan' => $this->input->post('in_pekerjaan'),
             'keterangan' => $this->input->post('in_keterangan'));
         $this->Programdesa_m->edit_db($id, $data);
-        redirect('Programdesa');
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+        redirect('Programdesa/index');
     }
 
 }

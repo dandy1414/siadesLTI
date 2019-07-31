@@ -43,6 +43,7 @@ class Pendidikan extends CI_Controller {
             'status' => $this->input->post('in_status'),
             'jumlah' => $this->input->post('in_jumlah'));
         $this->Pendidikan_m->edit_db($id, $data);
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
         redirect('Pendidikan');
     }
 }

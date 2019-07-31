@@ -52,7 +52,8 @@ class Layanan extends CI_Controller {
                 'file' => $file['file_name'], 'gambar' => $img
             );
             $this->Layanan_m->insert_db($data);
-            redirect('Layanan/form');
+            $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+            redirect('Layanan/index');
         } else {
             $error = array(
                 'error' => $this->upload->display_errors()
@@ -103,10 +104,9 @@ class Layanan extends CI_Controller {
 //            );
 //            echo json_encode($error);
         }
-
-
         $this->Layanan_m->edit_db($id_layanan, $data);
-        redirect('Layanan');
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+        redirect('Layanan/index');
     }
 
     function editFile() {

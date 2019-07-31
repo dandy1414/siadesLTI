@@ -27,7 +27,8 @@ class Galeri extends CI_Controller {
                 'gambar' => $gambar['file_name']
             );
             $this->Galeri_m->insert_db($data);
-             redirect('Galeri/form');
+            $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+             redirect('Galeri/index');
         } else {
             $error = array(
                 'error' => $this->upload->display_errors()
@@ -76,6 +77,7 @@ class Galeri extends CI_Controller {
            echo json_encode($error);
         }
         $this->Galeri_m->edit_db($id_galeri, $data);
-        redirect('Galeri');
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+        redirect('Galeri/index');
     }
 }

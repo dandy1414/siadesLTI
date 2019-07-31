@@ -10,9 +10,16 @@
 				</div>
 				<div class="panel-body">
 					<div class="responsive-table">
-						<p><a class="btn btn-success" href="<?php echo site_url('Balita/form');?>"><i class="fa fa-plus"></i>
+						<p><a class="btn btn-success" href="<?php echo site_url('Balita/form');?>"><i
+									class="fa fa-plus"></i>
 								Tambah</a></p>
-						<table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+						<?php if($this->session->flashdata()) : ?>
+						<div class="alert alert-success" role="alert">
+							<?php echo $this->session->flashdata('sukses'); ?>
+						</div>
+						<?php endif; ?>
+						<table id="datatables-example" class="table table-striped table-bordered" width="100%"
+							cellspacing="0">
 							<thead>
 								<tr>
 									<th scope="col">No</th>
@@ -37,9 +44,11 @@
                             $total=$total + $row->jumlah?></td>
 									<td>
 
-										<a class="btn btn-danger" href="<?php echo site_url('Balita/delete/'.$row->gender);?>"
+										<a class="btn btn-danger"
+											href="<?php echo site_url('Balita/delete/'.$row->gender);?>"
 											onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
-										<a class="btn btn-info" href="<?php echo site_url('Balita/select_by/'.$row->gender);?>">Edit</a>
+										<a class="btn btn-info"
+											href="<?php echo site_url('Balita/select_by/'.$row->gender);?>">Edit</a>
 									</td>
 								</tr>
 

@@ -36,6 +36,7 @@ class Balita extends CI_Controller{
             'jumlah' => $this->input->post('jumlah')
                 );
         $this->Balita_m->edit_db($gender,$data);
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
         redirect('Balita');
     } 
     

@@ -23,7 +23,8 @@ class Lembaga extends CI_Controller {
             'nama_lembaga' => $this->input->post('in_nama_lembaga'),
             'detail_lembaga' => $this->input->post('isi'));
         $this->Lembaga_m->insert_db($data);
-        redirect('Lembaga/form');
+        $this->session->set_flashdata('sukses', 'Data berhasil ditambahkan');
+        redirect('Lembaga/index');
     }
 
     function index() {
@@ -46,7 +47,8 @@ class Lembaga extends CI_Controller {
             'nama_lembaga' => $this->input->post('in_nama_lembaga'),
             'detail_lembaga' => $this->input->post('isi'));
         $this->Lembaga_m->edit_db($id, $data);
-        redirect('Lembaga');
+        $this->session->set_flashdata('sukses', 'Data berhasil dirubah');
+        redirect('Lembaga/index');
     }
 
 }
