@@ -1,9 +1,6 @@
 <?php $this->load->view('header');?>
 <?php $this->load->view('sidebar');?>
-v class="panel-body"></div>
-        <div class="container">
-           
-      
+        
 <div id="content">
   <div class="col-md-12 top-20 padding-0">
     <div class="col-md-12">
@@ -28,7 +25,7 @@ v class="panel-body"></div>
                 </div>
                 <div class="form-group">
                     <label for="usr">File:</label>
-                    <input type="file" class="form-control" name="file" required="">
+                    <input type="file" class="form-control" name="file">
                 </div>
                 <button style ="margin-bottom:25px" class="btn btn-success" type="submit">Simpan</button>
               </form>
