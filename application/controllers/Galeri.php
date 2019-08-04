@@ -16,7 +16,7 @@ class Galeri extends CI_Controller {
     function insert() {
         $nm_file = time() . '.png';
         $config['upload_path'] = './assets/upload/';
-        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['allowed_types'] = 'jpg|jpeg|png|JPG|PNG';
         $config['file_name'] = $nm_file;
         $config['overwrite'] = TRUE;
         $this->upload->initialize($config);
@@ -71,10 +71,10 @@ class Galeri extends CI_Controller {
             $data = array(
                 'keterangan' => $this->input->post('in_keterangan')
             );
-           $error = array(
-               'error' => $this->upload->display_errors()
-           );
-           echo json_encode($error);
+        //    $error = array(
+        //        'error' => $this->upload->display_errors()
+        //    );
+        //    echo json_encode($error);
         }
         $this->Galeri_m->edit_db($id_galeri, $data);
         $this->session->set_flashdata('sukses', 'Data berhasil dirubah');

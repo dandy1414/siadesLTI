@@ -45,7 +45,7 @@
               </div>
 <!--              
 -->                 <a href="index.html" class="navbar-brand"> 
-                 <b>Desa Lauwba</b>
+                 <b>Admin</b>
                 </a> <!--
                   <img src="<?php echo base_url();?>asset/img/pdam.jpg" width="75" height="55"> -->
               <ul class="nav navbar-nav navbar-right user-nav">
@@ -54,7 +54,7 @@
                    <img src="<?php echo base_url();?>asset/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
                     <li><a href=""><span class="fa fa-user "></span> <?php echo $user; ?></a></li>
-                     <li><a href="<?php echo site_url('Logout/admin')?>" onclick="return confirm('Apakah anda yakin ingin keluar?')"><span class="fa fa-power-off "></span> Sign Out</a></li>
+                     <li><a href="<?php echo site_url('Logout/admin')?>" onclick="return confirm('Apakah anda yakin ingin keluar?')"><span class="fa fa-power-off "></span> Logout</a></li>
                   </ul>
                 </li>
                 <li ><a href="#" class="opener-right-menu"></span></a></li>

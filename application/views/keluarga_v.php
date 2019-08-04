@@ -8,7 +8,7 @@
                 <div class="panel-heading"><h3>Data Keluarga</h3></div>
                 <div class="panel-body">
                     <div class="responsive-table">
-                        <p><a class="btn btn-success" href="<?php echo site_url('Keluarga/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>
+                        <!-- <a><a class="btn btn-success" href="<?php echo site_url('Keluarga/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p> -->
                         <?php if($this->session->flashdata()) : ?>
 							<div class="alert alert-success" role="alert">
 								<?php echo $this->session->flashdata('sukses'); ?>
@@ -38,8 +38,6 @@
                                 $total = $total + $row->jumlah
                                 ?></td>
                                         <td>
-                                            <a class="btn btn-danger" href="<?php echo site_url('Keluarga/delete/' . $row->id_keluarga); ?>"
-                                               onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                                             <a class="btn btn-info" href="<?php echo site_url('Keluarga/select_by/' . $row->id_keluarga); ?>">Edit</a>
                                         </td>
                                     </tr>

@@ -70,14 +70,14 @@ class Pengumuman extends CI_Controller{
              $gambar = $this->upload->data(); 
              $data = array(
              'judul' => $this->input->post('in_judul'),
-             'isi' => $this->input->post('in_isi'),
+             'isi' => $this->input->post('isi'),
              'gambar' => $gambar['file_name'],
               'tanggal' => date('Y-m-d H:i:s')  
          );
          } else {
              $data = array(
                  'judul' => $this->input->post('in_judul'),
-                 'isi' => $this->input->post('in_isi'),
+                 'isi' => $this->input->post('isi'),
                  'tanggal' => $this->input->post('in_tanggal'),
                  );  
          

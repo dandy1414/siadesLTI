@@ -95,9 +95,7 @@ class Layanan extends CI_Controller {
         } else {
             $data = array(
                 'nama_layanan' => $this->input->post('nama_layanan'),
-                'isi_layanan' => $this->input->post('isi_layanan')
-              
-                
+                'isi_layanan' => $this->input->post('isi_layanan')   
             );
 //            $error = array(
 //                'error' => $this->upload->display_errors()
@@ -129,16 +127,12 @@ class Layanan extends CI_Controller {
             $data = array(
                 'nama_layanan' => $this->input->post('nama_layanan'),
                 'isi_layanan' => $this->input->post('isi_layanan')
-              
-                
             );
 //            $error = array(
 //                'error' => $this->upload->display_errors()
 //            );
 //            echo json_encode($error);
         }
-
-
         $this->Layanan_m->edit_db($id_layanan, $data);
         redirect('Layanan');
     }

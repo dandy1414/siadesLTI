@@ -8,7 +8,7 @@
                 <div class="panel-heading"><h3>Data Lansia</h3></div>
                 <div class="panel-body">
                     <div class="responsive-table">
-                        <p><a class="btn btn-success" href="<?php echo site_url('Lansia/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>     
+                        <!-- <a><a class="btn btn-success" href="<?php echo site_url('Lansia/form'); ?>"><i class="fa fa-plus"></i> Tambah</a></p>      -->
                         <?php if($this->session->flashdata()) : ?>
 							<div class="alert alert-success" role="alert">
 								<?php echo $this->session->flashdata('sukses'); ?>
@@ -38,8 +38,6 @@
                                 $total = $total + $row->jumlah
                                 ?></td>
                                         <td>
-                                            <a class="btn btn-danger" href="<?php echo site_url('Lansia/delete/' . $row->gender); ?>"
-                                               onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                                             <a class="btn btn-info" href="<?php echo site_url('Lansia/select_by/' . $row->gender); ?>">Edit</a>
                                         </td>
                                         <td></td>

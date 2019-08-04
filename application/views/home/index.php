@@ -153,8 +153,7 @@
 								style="height: 170px;" class="img-fluid">
 							<div class="blog-des mt-3">
 								<h5 class="card-title mt-4"><?= $row->judul; ?></h5>
-								<p class="card-text"
-									style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+								<p class="card-text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
 									<?= $row->isi; ?></p>
 								<a href="<?php echo site_url('Beritaf/detailBerita/' . $row->id_berita); ?>">
 									Selengkapnya </a>

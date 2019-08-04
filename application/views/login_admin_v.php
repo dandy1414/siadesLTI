@@ -40,7 +40,7 @@
 			style="background-image: url('<?php echo base_url();?>login/images/bg-01.jpg');">
 			<div class="container">
 				<div class="mt-3 mb-5" style="margin:0px;display:flex;justify-content:center;width:100%">
-					<h2 style="color:white">Account Lauwbas Login </h2>
+					<h2 style="color:white">Login Admin</h2>
 				</div>
 				<div style="width:100%;display:flex;justify-content:center;">
 					<div>
