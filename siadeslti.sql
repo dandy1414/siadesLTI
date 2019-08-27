@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2019 at 03:45 AM
+-- Generation Time: Aug 26, 2019 at 05:37 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `desalauwba`
+-- Database: `siadeslti`
 --
 
 -- --------------------------------------------------------
@@ -37,7 +37,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'irasiregar', 'ira0202');
+(1, 'irasiregar', 'ira0202'),
+(2, 'kemal', 'f72064ddd9');
 
 -- --------------------------------------------------------
 
@@ -68,7 +69,7 @@ CREATE TABLE `berita` (
   `id_berita` int(11) NOT NULL,
   `judul` varchar(100) NOT NULL,
   `kategori` varchar(10) NOT NULL,
-  `isi` varchar(1000) NOT NULL,
+  `isi` varchar(10000) NOT NULL,
   `gambar` text NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -78,10 +79,8 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `judul`, `kategori`, `isi`, `gambar`, `tanggal`) VALUES
-(5, 'Sosialisasi pkk', 'Sosial', 'Melakukan sosialisasi rutin dalam meiningkatkan perekonomian masyarakat yang dilakukan oleh kelompok ibu-ibu pkk ', '1553564958.png', '2019-03-26 08:49:18'),
-(6, 'Menyambut Ramadhan', 'Agama', 'Marhaban YA Ramadhan', '1553565170.png', '2019-03-26 08:52:50'),
-(7, 'Kerjabakti sosial sosial', 'Agama', 'melakukan kerjabakti sosial agama', '1553602753.png', '2019-03-26 19:19:13'),
-(8, 'H-30 Ramadhan', 'Agama', 'H-30 bulan Ramadhan', '1553749637.png', '2019-03-28 12:07:17');
+(11, 'Rapat Koordinasi Pamong Desa Sambut Hari Jadi Kabupaten Bantul Ke-188 Tahun', 'Agama', '<p>Pendowoharjo ---&nbsp;Pemerintah Desa Pendowoharjo kembali menggelar rapat koordinasi untuk seluruh pamong desa pada Senin lalu (14/7/2019). Kegiatan ini dilaksanakan di gedung pertemuan Manggolo Manis Desa Pendowoharjo. Peserta rapat koordinasi pamong ini terdiri dari lurah desa, carik (sekretaris desa), Kepala seksi, kepala urusan, dan seluruh staff desa. Rapat koordinasi ini bertujuan sebagai wadah komunikasi para pamong, dan sharing knowledge terkait perkembangan baik di tingkat dusun, desa, kecamatan, maupun tingkat kabupaten. Selain itu kegiatan ini bertujuan sebagai wahana sosialisasi kegiatan desa selama 1 bulan ke depan.</p>\r\n\r\n<p>Topik bahasan pada rapat koordinasi pamong kali ini adalah terkait pelaksanaan kegiatan upacara dan peringatan hari jadi Pemerintah Kabupaten Bantul yang akan digelar pada hari Sabtu (20/07/2019). Selain itu juga membahas terkait persiapan Musdes RKP yang akan segera digelar guna merencanakan kegiatan-kegiatan yang ada di tahun 2019. Mari terus bekerja membangun desa untuk mewujudkan kemandirian dan kesejahteraan bersama. - GNR</p>\r\n', 'gambar3.jpg', '2019-07-31 15:43:06'),
+(12, 'Dana Operasional RT, Bentuk Apresiasi Pemerintah Desa Bagi Ketua RT di Desa Pendowoharjo', 'Sosial', '<p>Pendowoharjo--- Pemerintah Desa Pendowoharjo pada tahun 2019 menganggarkan dana intensif kegiatan operasional bagi ketua RT yang berjumlah 94 RT, yang berasal dari Alokasi Dana Desa. Dana operasional ini merupakan salah satu bentuk apresiasi Pemkab Bantul bagi seluruh ketua RT dalam menjalankan tugasnya dengan baik.</p>\r\n\r\n<p>Adapun prosedur pencairan dana operasional ketua RT diserahkan sepenuhnya kepada masing-masing kelurahan. Desa Pendowoharjo mewajibkan ketua RT yang akan mencairkan dana operasional tersebut harus melengkapi berkas kelengkapan SPJ terlebih dahulu. Setelah berkas SPJ dinyatakan lengkap, Pemerintah Desa akan melakukan proses pencairan dan dana dapat diambil di Desa Pendowoharjo bagian keuangan. Adapun jumlah yang diterima oleh masing-masing Ketua RT pada Tahun 2019 sebesar Rp 700.000,00 (belum termasuk pajak). Hingga saat ini, ketua RT yang sudah melengkapi berkas SPJ dan mencairkan dana intensif sebanyak 60 RT dari 94 RT. Para ketua RT sangat berterima kasih ata', '1564563002.png', '2019-07-31 15:50:02');
 
 -- --------------------------------------------------------
 
@@ -100,10 +99,9 @@ CREATE TABLE `galeri` (
 --
 
 INSERT INTO `galeri` (`id_galeri`, `gambar`, `keterangan`) VALUES
-(2, '1553498623.png', 'Gotong Royong'),
-(4, '1553750839.png', 'Karang Taruna'),
-(5, '1553750849.png', 'Pelantikan'),
-(6, '1553750862.png', 'Pelantikan lurah');
+(5, '1553750849.png', 'Pelantikan perangkat desa'),
+(6, '1553750862.png', 'Pelantikan lurah'),
+(9, '1564919343.png', 'Karang Taruna');
 
 -- --------------------------------------------------------
 
@@ -123,7 +121,9 @@ CREATE TABLE `kategori` (
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 (1, 'Agama'),
 (2, 'Sosial'),
-(3, 'Ekonomi');
+(3, 'Ekonomi'),
+(4, 'Budaya'),
+(5, 'Politik');
 
 -- --------------------------------------------------------
 
@@ -175,6 +175,7 @@ CREATE TABLE `layanan` (
   `nama_layanan` varchar(40) NOT NULL,
   `isi_layanan` text NOT NULL,
   `gambar` text NOT NULL,
+  `file` text NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -182,9 +183,8 @@ CREATE TABLE `layanan` (
 -- Dumping data for table `layanan`
 --
 
-INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `isi_layanan`, `gambar`, `tanggal`) VALUES
-(22, 'Pindah Penduduk ', 'Pindah Penduduk', '1553607221.png', '2019-03-26 13:33:41'),
-(23, 'Alur Pelayanan Desa', 'Alur Pelayanan Desa', '1553607383.png', '2019-03-26 13:36:23');
+INSERT INTO `layanan` (`id_layanan`, `nama_layanan`, `isi_layanan`, `gambar`, `file`, `tanggal`) VALUES
+(39, 'Alur Pelayanan Desa', 'Pelayanan Desa', '1564589462.png', '1564589462.pdf', '2019-07-31 16:11:02');
 
 -- --------------------------------------------------------
 
@@ -203,8 +203,7 @@ CREATE TABLE `lembaga` (
 --
 
 INSERT INTO `lembaga` (`id_lembaga`, `nama_lembaga`, `detail_lembaga`) VALUES
-(1, 'Karang Taruna', 'Karang Taruna adalah kegiatan muda-mudi di desa pendowoharjo'),
-(2, 'Wirid Yasin sss', '                                        fjghergjih             sssss                       ');
+(1, 'Karang Taruna', '<p>Karang Taruna adalah kegiatan muda-mudi di desa pendowoharjo</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -264,7 +263,7 @@ INSERT INTO `penduduk` (`gender`, `jumlah`) VALUES
 CREATE TABLE `pengaduan` (
   `id_pengaduan` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `keluhan` varchar(50) NOT NULL,
+  `keluhan` varchar(10000) NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -273,8 +272,8 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`id_pengaduan`, `username`, `keluhan`, `tanggal`) VALUES
-(1, 'irasiregar', 'aaaaaaaaaaaaaaaaaaaaa', '2019-03-28 10:42:48'),
-(3, 'qqqqqqqqqq', 'aaaaaaaaaaaaa                       bbbbbbbbb', '2019-03-28 10:57:05');
+(11, 'kemal', 'Irigasi Jl.Pendowo tersumbat', '2019-07-11 15:15:14'),
+(12, 'kemal', 'saluran mampet', '2019-08-05 10:09:03');
 
 -- --------------------------------------------------------
 
@@ -285,7 +284,7 @@ INSERT INTO `pengaduan` (`id_pengaduan`, `username`, `keluhan`, `tanggal`) VALUE
 CREATE TABLE `pengumuman` (
   `id_pengumuman` int(11) NOT NULL,
   `judul` varchar(100) NOT NULL,
-  `isi` varchar(1000) NOT NULL,
+  `isi` varchar(10000) NOT NULL,
   `gambar` text NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -295,10 +294,7 @@ CREATE TABLE `pengumuman` (
 --
 
 INSERT INTO `pengumuman` (`id_pengumuman`, `judul`, `isi`, `gambar`, `tanggal`) VALUES
-(15, 'Pengumuman', 'Pengumuman', '1553607636.png', '2019-03-26 20:40:36'),
-(16, 'Gotong royong ', '        Pengumuman Gotong Royong  Bersama', '1553607721.png', '2019-03-26 14:42:43'),
-(17, 'Musyawarah Besar', 'Musyawarah Besar akan dilakukan di balai desa', '1553750566.png', '2019-03-28 12:22:46'),
-(18, 'Penyambutan Bupati', 'Penyambutan bupati dibuka dengan arak-arakan keliling kampung', '1553750611.png', '2019-03-28 12:23:31');
+(20, 'Rakor Persiapan Evaluasi LPMD Berprestasi Tingkat Kabupaten Bantul Tahun 2019', '<p>Pendowoharjo---&nbsp;Rasa syukur dipanjatkan atas hasil evaluasi tahap I Evaluasi Lembaga Pemberdayaan Masyarakat Desa (LPMD) Berprestasi Tingkat Kabupaten Bantul Tahun 2019 yang menyebutkan bahwa Desa Pendowoharjo masuk dalam 6 besar penilaian atas profil kegiatan LPMDnya. Selanjutnya, bersama 5 terbaik lainnya, akan dilakukan evaluasi tahap II berupa verifikasi lapangan yang akan dilaksanakan Selasa, 9 April 2019.</p>\r\n\r\n<p>Menanggapi hal ini, Ketua LPMD Desa Pendowoharjo, Ngadiman, menyampaikan bahwa untuk menindaklanjuti hasil lomba maka LPMD akan berusaha sebaik mungkin untuk mendapatkan hasil terbaik.</p>\r\n\r\n<p>Dalam rapat koordinasi di Waroeng Omah Sawah Miri, Rabu (3/4/2019) dilakukan pembahasan mengenai persiapan verifikasi lapangan berupa paparan, administrasi kesekretariatan serta kunjungan lapangan di kelompok binaan LPMD. Direncanakan kunjungan nantinya dilakukan ke TK LKMD Kaliputih dan kelompok binaan kerajinan kipas yang ada di Banyon.</p>\r\n\r\n<p>Dengan persiapan ini, diharapkan Desa Pendowoharjo akan mendapatkan prestasi yang bagus dalam evaluasi atau lomba kali ini. Di samping itu, ke depannya, peran LPMD juga sangat diharapkan dalam mensukseskan berbagai program pembangunan yang telah tertuang dalam RPJMDes Pendowoharjo.</p>\r\n', 'gambar3.jpg', '2019-08-04 13:58:23');
 
 -- --------------------------------------------------------
 
@@ -318,8 +314,7 @@ CREATE TABLE `potensidesa` (
 --
 
 INSERT INTO `potensidesa` (`id_potensi`, `gambar`, `nama_desa`, `keterangan`) VALUES
-(1, '1553607827.png', 'konoha ', 'Ninjutsu'),
-(2, 'af.jpg', 'konoha ', 'Apa ajalah vvvvv bbb');
+(1, '1564663108.png', 'Brayut', 'Desa Wisata');
 
 -- --------------------------------------------------------
 
@@ -375,7 +370,7 @@ INSERT INTO `programdesa` (`id_program`, `lokasi`, `pekerjaan`, `keterangan`) VA
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `username` varchar(10) NOT NULL,
   `password` varchar(10) NOT NULL,
   `alamat` varchar(35) NOT NULL,
   `jenis_kelamin` varchar(10) NOT NULL,
@@ -386,8 +381,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `email`, `password`, `alamat`, `jenis_kelamin`, `tanggal`) VALUES
-(1, 'zelvi@gmail.com', '12345', 'Padang', 'Perempuan', '2019-03-31 21:40:29');
+INSERT INTO `user` (`id_user`, `username`, `password`, `alamat`, `jenis_kelamin`, `tanggal`) VALUES
+(4, 'kemal', 'kemal12', 'Jl. Pendowo 1', 'Laki-laki', '2019-07-31 14:38:01');
 
 --
 -- Indexes for dumped tables
@@ -503,22 +498,22 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `keluarga`
 --
@@ -528,12 +523,12 @@ ALTER TABLE `keluarga`
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `lembaga`
 --
 ALTER TABLE `lembaga`
-  MODIFY `id_lembaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_lembaga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `pendidikan`
 --
@@ -543,17 +538,17 @@ ALTER TABLE `pendidikan`
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id_pengaduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pengaduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_pengumuman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `potensidesa`
 --
 ALTER TABLE `potensidesa`
-  MODIFY `id_potensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_potensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `privacy`
 --
@@ -568,7 +563,7 @@ ALTER TABLE `programdesa`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
