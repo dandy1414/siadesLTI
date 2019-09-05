@@ -21,7 +21,7 @@
                 </div>
                  <div class="form-group">
                     <label for="usr">Gambar:</label>
-                    <input type="file" class="form-control" name="gambar" required="">
+                    <input type="file" class="form-control" name="gambar">
                 </div>
                 <div class="form-group">
                     <label for="usr">File:</label>

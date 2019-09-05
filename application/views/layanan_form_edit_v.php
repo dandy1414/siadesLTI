@@ -14,7 +14,7 @@
                             ?>
 					<form method="post" action="<?php echo site_url('Layanan/edit'); ?>" enctype="multipart/form-data">
 
-						<input type="hidden" name="id" value="<?php echo $row->id_layanan; ?>">
+						<input type="hidden" name="id_layanan" value="<?php echo $row->id_layanan; ?>">
 						<div class="form-group">
 							<label for="comment">Nama Layanan:</label>
 							<input type="text" class="form-control" name="nama_layanan" required=""

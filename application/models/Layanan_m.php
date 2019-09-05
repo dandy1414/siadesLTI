@@ -22,10 +22,10 @@ class Layanan_m extends CI_Model{
   }
   
   function edit_db($id, $data){   
-      $this->db  ->where('id_layanan', $id);
-      $this->db  ->update('layanan', $data);
-  
+      $this->db->where('id_layanan', $id);
+      $this->db->update('layanan', $data);
   } 
+  
   function select_layanan_where($id) 
   {
     $query = $this->db->query("SELECT * FROM layanan WHERE id_layanan='$id'");
