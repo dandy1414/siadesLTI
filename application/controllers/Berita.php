@@ -44,6 +44,8 @@ class Berita extends CI_Controller {
     }
 
     function delete($id_berita) {
+		$data = $this->select_by($id_berita);
+		unlink("./assets/upload/".$data[0]->gambar);
         $this->Berita_m->delete_db($id_berita);
         redirect('Berita');
     }

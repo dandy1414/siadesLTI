@@ -42,6 +42,8 @@ class Galeri extends CI_Controller {
     }
 
     function delete($id_galeri) {
+		$data = $this->select_by($id_galeri);
+		unlink("./assets/upload/".$data[0]->gambar);
         $this->Galeri_m->delete_db($id_galeri);
         redirect('Galeri');
     }

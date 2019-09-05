@@ -151,6 +151,10 @@ class Layanan extends CI_Controller {
     }
 
     function delete($id) {
+		$data = $this->Layanan_m->select_by_db($id);
+		unlink("./assets/upload/".$data[0]->gambar);
+		unlink("./assets/document/".$data[0]->file);
+
         $this->Layanan_m->delete_db($id);
         redirect('Layanan');
     }

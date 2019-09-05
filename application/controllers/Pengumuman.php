@@ -45,9 +45,11 @@ class Pengumuman extends CI_Controller{
         
     }
     
-    function delete($id) {       
-        $this->Pengumuman_m->delete_db($id);       
-    redirect('Pengumuman');
+    function delete($id) {
+		$data = $this->select_by($id);
+		unlink("./assets/upload/".$data[0]->gambar);       
+    	$this->Pengumuman_m->delete_db($id);       
+    	redirect('Pengumuman');
     
     } 
     

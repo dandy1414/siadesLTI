@@ -44,6 +44,8 @@ class Potensidesa extends CI_Controller {
     }
 
     function delete($id) {
+		$data = $this->select_by($id);
+		unlink("./assets/upload/".$data[0]->gambar);
         $this->Potensidesa_m->delete_db($id);
         redirect('Potensidesa');
     }
